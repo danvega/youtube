@@ -10,6 +10,5 @@
 
 <script setup>
 const route = useRoute();
-const { data } = await useFetch('/api/posts');
-const post = data.value.posts.find(post => post.id === parseInt(route.params.id));
+const post = await $fetch(`/api/posts/${route.params.id}`);
 </script>
